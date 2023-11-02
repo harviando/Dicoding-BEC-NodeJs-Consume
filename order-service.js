@@ -1,5 +1,5 @@
-const http = require('http');
-const url = require('url');
+import http from 'http';
+import url from 'url';
 
 const menus = ['Nasi Goreng', 'Mie Goreng', 'Mie rebus ', 'Es Teh', 'Teh Tawar'];
 const MISSING = 3;
@@ -20,7 +20,7 @@ const server = http.createServer((req, res) => {
         return void res.end();
     }
 
-    ressetHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Type', 'application/json');
 
     res.end(JSON.stringify({
         id,
@@ -29,6 +29,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(process.env.PORT || 0, () => {
-    const { port } = serer.address();
+    const { port } = server.address();
     console.log(`Order service listening on ${port}`);
 });

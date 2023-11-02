@@ -1,5 +1,7 @@
-const http = require('http');
-const url = require('url');
+import http from 'http';
+import url from 'url';
+
+
 
 const users = ['Aras', 'Arsy', 'Dimas', 'Ivan', 'Rafy', 'Gilang'];
 const MISSING = 4;
